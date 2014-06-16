@@ -22,21 +22,331 @@
 <div id="impress">
     <section class="step" data-x="0" data-y="0" data-z="-3000" data-scale="6">
         <header>
-            <h1>JavaScript Standarts</h1>
+            <h1>JavaScript Standarts and best practices</h1>
         </header>
     </section>
 
     <section class="step" data-x="0" data-y="0">
-        <header>
-            <h2>JavaScript Syntax</h2>
-        </header>
-        <ul>
-            <li>General stuff</li>
-            <li>Types</li>
-            <li>Operators</li>
-            <li>Statements</li>
-        </ul>
+        <pre><code class="javascript">
+// bad
+var item = new Object();
+
+// good
+var item = {};
+         </code></pre>
     </section>
+        <section class="step" data-x="0" data-y="0">
+        <pre><code class="javascript">
+// bad
+var items = new Array();
+
+// good
+var items = [];
+         </code></pre>
+    </section>
+    <section class="step" data-x="0" data-y="0" data-rotate="360">
+        <pre><code class="javascript">
+// bad
+var superman = {
+  class: 'alien'
+};
+
+// bad
+var superman = {
+  klass: 'alien'
+};
+
+// good
+var superman = {
+  type: 'alien'
+};
+         </code></pre>
+    </section>
+    <section class="step" data-x="0" data-y="0" data-rotate="360">
+        <pre><code class="javascript">
+// bad
+function nope(name, options, arguments) {
+  // ...code...
+}
+
+// good
+function yup(name, options, args) {
+  // ...code...
+}
+         </code></pre>
+    </section>
+    <section class="step" data-x="0" data-y="0">
+        <pre><code class="javascript">
+// bad
+var i, items = getItems(),
+    dragonball,
+    goSportsTeam = true,
+    len;
+
+// hmmmm...
+var items = getItems();
+var goSportsTeam = true;
+var dragonball = 'z';
+
+// mmmm :)
+var items = getItems(),
+    goSportsTeam = true,
+    dragonball,
+    length,
+    i;
+         </code></pre>
+    </section>
+    <section class="step" data-x="0" data-y="0">
+        <pre><code class="javascript">
+// bad
+function() {
+    if (typeof name === 'underfined') {
+        var name = getName();
+    }
+
+  return name;
+}
+
+// good
+function() {
+    var name;
+
+    if (typeof name === 'underfined') {
+        name = getName();
+    }
+
+    return name;
+}
+         </code></pre>
+    </section>
+    <section class="step" data-x="0" data-y="0">
+        <pre><code class="javascript">
+// bad
+if (test)
+  return false;
+
+// hmmmm....
+if (test) return false;
+
+// good
+if (test) {
+  return false;
+}
+         </code></pre>
+    </section>
+    <section class="step" data-x="0" data-y="0">
+        <pre><code class="javascript">
+// bad
+function test()
+{
+  console.log('test');
+}
+
+// hmmmm...
+function test(){
+  console.log('test');
+}
+
+// good
+function test() {
+  console.log('test');
+}
+         </code></pre>
+    </section> 
+    <section class="step" data-x="0" data-y="0" data-rotate="-360">
+        <pre><code class="javascript">
+// bad
+var once
+  , upon
+  , aTime;
+
+// good
+var once,
+    upon,
+    aTime;
+         </code></pre>
+    </section>
+    <section class="step" data-x="0" data-y="0" data-rotate="-360">
+        <pre><code class="javascript">
+  // bad
+  var hero = {
+    firstName: 'Kevin',
+    lastName: 'Flynn',
+  };
+
+// good
+  var heroes = [
+    'Batman',
+    'Superman'
+  ];
+         </code></pre>
+    </section> 
+    <section class="step" data-x="0" data-y="0">
+        <pre><code class="javascript">
+var a = 2 + '5'; // '25';
+
+// bad
+var val = +inputValue;
+
+// bad
+var val = new Number(inputValue);
+
+// bad
+var val = parseInt(inputValue);
+         </code></pre>
+    </section>
+    <section class="step" data-x="0" data-y="0">
+        <pre><code class="javascript">
+// good
+var val = Number(inputValue);
+
+// good
+var val = parseInt(inputValue, 10);
+         </code></pre>
+    </section>
+    <section class="step" data-x="0" data-y="0">
+        <pre><code class="javascript">
+var age = 0;
+
+// bad
+var hasAge = new Boolean(age);
+
+// good
+var hasAge = Boolean(age);
+
+// good
+var hasAge = !!age;
+         </code></pre>
+    </section>
+    <section class="step" data-x="1000" data-y="0"  data-rotate="-90" data-scale="3">
+        <header>
+            <h2 class="centered">And a few more best practicies</h2>
+        </header>
+    </section>
+    <section class="step" data-x="1000" data-y="0"  data-rotate="-90">
+        <pre><code class="javascript">
+// Yes!
+&lt;a href="#"&gt;it has js handler&lt;/a&gt;
+
+// No!
+&lt;a href="javascript:handleClick()"&gt;...&lt;/a&gt;
+         </code></pre>
+    </section>
+    <section class="step" data-x="1000" data-y="0"  data-rotate="-90">
+        <pre><code class="javascript">
+var MyNamespace = MyNamespace || {};
+
+MyNamespace.MyModule = function()
+{
+    // Your module is now in a namespace!
+}
+         </code></pre>
+    </section>
+    <section class="step" data-x="1000" data-y="0"  data-rotate="-90">
+        <pre><code class="javascript">
+/* An anonymous function
+ * that can never be referenced 
+ * by name...
+ */
+(function(){
+    var x = 123;
+    console.log(x);
+})(); // Call it once, then throw it away!
+
+console.log(x);
+         </code></pre>
+    </section>
+    <section class="step" data-x="-1000" data-y="0"  data-rotate="810" data-scale="3">
+        <header>
+            <h2 class="centered">Nightmare. Bad practies</h2>
+        </header>
+    </section>
+    <section class="step" data-x="-1000" data-y="0"  data-rotate="810">
+        <pre class="tiny"><code class="javascript">
+var name = 'Steve Kwan';
+var company = 'Electronic Arts';
+
+var myFunction = function() {
+    $('form#my-form').submit (
+        function(event) {
+            event.preventDefault();
+            $.ajax (
+                '/some_service',
+                {
+                    type: "POST",
+                    data:
+                    {
+                        name: name,
+                        name: company
+                    },
+                    success: function(data) {
+                        callSomeCompletionFunction (
+                            {
+                                response1: data.value1,
+                                response2: data.value2
+                            }
+                        )
+                    },
+                    error: function(data) {
+                        callSomeErrorHandler (
+                            {
+                                response1: data.value1,
+                                response2: data.value2
+                            }
+                        )
+                    }
+                }
+            );
+        }
+    );
+};
+         </code></pre>
+    </section>
+    <section class="step" data-x="-1000" data-y="0"  data-rotate="810">
+        <pre><code class="javascript">
+var table = $('&lt;table&gt;&lt;/table&gt;');
+
+$('body').append(table);
+
+for (var i=0; i &lt; 10000; i++) {
+    $('table').append (
+        '&lt;tr&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;2&lt;/td&gt;&lt;/tr&gt;'
+    );
+}
+
+window.alert('Done!');
+         </code></pre>
+    </section>
+    <section class="step" data-x="0" data-y="1000"  data-rotate="90" data-scale="3">
+        <header>
+            <h2 class="centered">And something that could be turned into a religious war</h2>
+        </header>
+    </section>
+    <section class="step" data-x="0" data-y="1000"  data-rotate="90" data-scale="3">
+        <header>
+            <h2 class="centered">== or === ?</h2>
+        </header>
+    </section>
+    <section class="step" data-x="0" data-y="1000"  data-rotate="90" data-scale="3">
+        <header>
+            <h2 class="centered">tabs or spaces?</h2>
+        </header>
+    </section>
+
+    <section class="step" data-x="0" data-y="0" data-scale="3">
+        <header>
+            <h2 class="centered">Thank you!</h2>
+        </header>
+        <p><b>Skype:</b> marina_miranovich</p>
+        <p><b>Twitter:</b> @obnoxious_mari</p>
+    </section>
+
+
+    <!-- <section class="step" data-x="0" data-y="0">
+        <pre><code class="javascript">
+
+         </code></pre>
+    </section> -->
     
 
 </div>
