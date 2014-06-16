@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <title>JavaScript Syntax</title>
+
+    <link href='http://fonts.googleapis.com/css?family=Gilda+Display|Imprima' rel='stylesheet' type='text/css'>
+
+    <link href="css/impress.css" rel="stylesheet" />
+    
+    <link rel="stylesheet" href="http://yandex.st/highlightjs/8.0/styles/default.min.css" />
+    <link rel="shortcut icon" href="favicon.png" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+</head>
+<body class="impress-not-supported">
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div id="impress">
+    <section class="step" data-x="0" data-y="0" data-z="-3000" data-scale="6">
+        <header>
+            <h1>JavaScript Syntax</h1>
+        </header>
+    </section>
+    <section class="step" data-x="0" data-y="0" data-z="-1500">
+        <img src="images/hello.jpg" alt="I find you very attractive!" width="100%" height="100%"/>
+    </section>
+    <section class="step" data-x="0" data-y="0">
+        <header>
+            <h2>JavaScript Syntax</h2>
+        </header>
+        <ul>
+            <li>General stuff</li>
+            <li>Types</li>
+            <li>Operators</li>
+            <li>Statements</li>
+        </ul>
+    </section>
+    <section class="step not_hide" data-x="0" data-y="1000" data-scale="3">
+        <header>
+            <h2 class="centered">General stuff</h2>
+        </header>
+    </section>
+    <section class="step not_hide" data-x="0" data-y="1300">
+        <header>
+            <h2>Whitespace and Line Breaks</h2>
+        </header>
+        <p class="show_on_active">JavaScript ignores spaces, tabs, and newlines.</p>
+    </section>
+    <section class="step not_hide" data-x="0" data-y="1600">
+        <header>
+            <h2>Case Sensitivity</h2>
+        </header>
+        <p class="show_on_active">JavaScript is a case-sensitive language.</p>
+    </section>
+    <section class="step not_hide" data-x="0" data-y="1950">
+        <header>
+            <h2>Comments</h2>
+        </header>
+        <pre class="show_on_active"><code class="javascript">
+// This is a comment.
+
+/*
+ * This is a multiline comment.
+ * This is a second line.
+ * This is a third line.
+ */
+         </code></pre>
+    </section>
+    <section class="step not_hide" data-x="1000" data-y="0"  data-rotate="-90" data-scale="3">
+        <header>
+            <h2 class="centered">Types</h2>
+        </header>
+    </section>
+    <section class="step not_hide" data-x="1200" data-y="0" data-rotate="-90">
+        <header>
+            <h2 class="centered">Primitive Types</h2>
+        </header>
+    </section>
+    <section class="step not_hide" data-x="1400" data-y="0" data-rotate="-90">
+        <header>
+            <p class="centered">Boolean</h3>
+        </header>
+                <pre class="show_on_active"><code class="javascript">
+typeof true === "boolean";   // true
+typeof false === "boolean";   // true
+         </code></pre>
+    </section>
+    <section class="step not_hide" data-x="1550" data-y="0" data-rotate="-90">
+        <header>
+            <p class="centered">Number</h3>
+        </header>
+                <pre class="show_on_active"><code class="javascript">
+typeof 42            === "number";    // true
+         </code></pre>
+    </section>
+    <section class="step not_hide" data-x="1700" data-y="0" data-rotate="-90">
+        <header>
+            <p class="centered">String</h3>
+        </header>
+                <pre class="show_on_active"><code class="javascript">
+typeof "42"          === "string";    // true
+         </code></pre>
+    </section>
+    <section class="step not_hide" data-x="1850" data-y="0" data-rotate="-90">
+        <header>
+            <p class="centered">Object</h3>
+        </header>
+                <pre class="show_on_active"><code class="javascript">
+typeof { life: 42 }  === "object";    // true
+         </code></pre>
+    </section>
+    <section class="step not_hide" data-x="2000" data-y="0" data-rotate="-90">
+        <header>
+            <p class="centered">Undefined</h3>
+        </header>
+                <pre class="show_on_active"><code class="javascript">
+typeof undefined     === "undefined"; // true
+         </code></pre>
+    </section>
+    <section class="step not_hide" data-x="2150" data-y="0" data-rotate="-90">
+        <header>
+            <p class="centered">Null</h3>
+        </header>
+                <pre class="show_on_active"><code class="javascript">
+typeof null === "object"; // true
+         </code></pre>
+    </section>
+    <section class="step" data-x="2300" data-y="0" data-rotate="-90">
+        <header>
+            <h2 class="centered">The rest is objects...</h2>
+        </header>
+        <pre><code class="javascript">
+typeof [1,2,3] === "object"; // true
+         </code></pre>
+    </section>
+    <section class="step" data-x="2550" data-y="0" data-rotate="-90">
+        <ul>
+            <li>Array</li>
+            <li>Boolean</li>
+            <li>Date</li>
+            <li>Math</li>
+            <li>Number</li>
+            <li>String</li>
+            <li>RegExp</li>
+        </ul>
+    </section>
+    <section class="step" data-x="2600" data-y="0" data-rotate="-90">
+        <header>
+            <h2 class="centered">And one more thing</h2>
+        </header>
+    </section>
+    <section class="step" data-x="2750" data-y="0" data-rotate="-90">
+        <pre><code class="javascript">
+typeof function a(){/* */} === "function";
+// true
+         </code></pre>
+    </section>
+    <section class="step not_hide" data-x="0" data-y="-1000"  data-rotate="-180" data-scale="3">
+        <header>
+            <h2 class="centered">Operators and keywords</h2>
+        </header>
+    </section>
+    <section class="step not_hide" data-x="0" data-y="-1600"  data-rotate="-180">
+        <header>
+            <h2>Primary expressions</h2>
+        </header>
+        <ul class="show_on_active">
+            <li>this</li>
+            <li>function</li>
+            <li>[ ]</li>
+            <li>{ }</li>
+            <li>/ab+c/i</li>
+        </ul>
+    </section>
+    <section class="step not_hide" data-x="0" data-y="-1950"  data-rotate="-180">
+        <header>
+            <h2>Increment and decrement</h2>
+        </header>
+        <ul class="show_on_active">
+            <li>A++</li>
+            <li>A--</li>
+            <li>++A</li>
+            <li>--A</li>
+        </ul>
+    </section>
+    <section class="step not_hide" data-x="0" data-y="-2300"  data-rotate="-180">
+        <header>
+            <h2>Unary operators</h2>
+        </header>
+        <ul class="show_on_active">
+            <li>delete</li>
+            <li>typeof</li>
+            <li>+</li>
+            <li>-</li>
+            <li>!</li>
+        </ul>
+    </section>
+    <section class="step not_hide" data-x="0" data-y="-2650"  data-rotate="-180">
+        <header>
+            <h2>Arithmetic operators</h2>
+        </header>
+        <ul class="show_on_active">
+            <li>+</li>
+            <li>-</li>
+            <li>/</li>
+            <li>*</li>
+            <li>%</li>
+        </ul>
+    </section>
+    <section class="step not_hide" data-x="0" data-y="-3000"  data-rotate="-180">
+        <header>
+            <h2>Assignment operators</h2>
+        </header>
+        <ul class="show_on_active">
+            <li>=</li>
+            <li>+=</li>
+            <li>-=</li>
+            <li>/=</li>
+            <li>*=</li>
+            <li>%=</li>
+        </ul>
+    </section>
+    <section class="step not_hide" data-x="0" data-y="-3350"  data-rotate="-180">
+        <header>
+            <h2>Relational operators</h2>
+        </header>
+        <ul class="show_on_active">
+            <li>in</li>
+            <li>instanceof</li>
+            <li>&lt;</li>
+            <li>&gt;</li>
+            <li>&lt;=</li>
+            <li>&gt;=</li>
+        </ul>
+    </section>
+    <section class="step not_hide" data-x="0" data-y="-3700"  data-rotate="-180">
+        <header>
+            <h2>Equality operators</h2>
+        </header>
+        <ul class="show_on_active">
+            <li>==</li>
+            <li>!=</li>
+            <li>===</li>
+            <li>!==</li>
+        </ul>
+    </section>
+    <section class="step not_hide" data-x="0" data-y="-4050"  data-rotate="-180">
+        <header>
+            <h2>Conditional (ternary) operator</h2>
+        </header>
+        <ul class="show_on_active">
+            <li>(condition ? ifTrue : ifFalse)</li>
+        </ul>
+    </section>
+    <section class="step not_hide" data-x="-1000" data-y="0"  data-rotate="-270" data-scale="3">
+        <header>
+            <h2 class="centered">Statements</h2>
+        </header>
+    </section>
+    <section class="step not_hide" data-x="-1300" data-y="0"  data-rotate="-270">
+        <header>
+            <p class="centered">Code blocks</h3>
+        </header>
+                <pre class="show_on_active"><code class="javascript">
+function myFunction() {
+    console.log('Hello World!');
+}
+         </code></pre>
+    </section>
+    <section class="step not_hide" data-x="-1600" data-y="0"  data-rotate="-270">
+        <header>
+            <p class="centered">Conditional</h3>
+        </header>
+                <pre class="show_on_active"><code class="javascript">
+if (true) {
+    //do smth
+} else {
+    //do else
+}
+         </code></pre>
+    </section>
+    <section class="step not_hide" data-x="-1950" data-y="0"  data-rotate="-270">
+        <header>
+            <p class="centered">Loops</h3>
+        </header>
+        <pre class="show_on_active"><code class="javascript">
+for (var i = 0; i &lt; 10; i ++) {
+    if (i == 0) {
+        continue;
+    }
+    if (i == 6) {
+        break;
+    }
+    console.log(i);
+}
+         </code></pre>
+    </section>
+    <section class="step" data-x="-1950" data-y="0"  data-rotate="-270">
+
+        <pre class="show_on_active"><code class="javascript">
+for (var smth in myObj) {
+    if (myObj.hasOwnProperty(smth)) {
+        console.log(myObj[smth]);
+    }
+}
+         </code></pre>
+    </section>
+    <section class="step not_hide" data-x="-2300" data-y="0"  data-rotate="-270">
+        <header>
+            <p class="centered">Function</h3>
+        </header>
+                <pre class="show_on_active"><code class="javascript">
+function myFunction() {
+    var someValue = 2;
+    return 2;
+}
+         </code></pre>
+    </section>
+    <section class="step not_hide" data-x="-2650" data-y="0"  data-rotate="-270">
+        <header>
+            <p class="centered">Exceptions</h3>
+        </header>
+                <pre class="show_on_active"><code class="javascript">
+try {
+    if (notDefined) {
+        // do something
+    }
+} catch (e) {
+    console.log(e);
+} finally {
+    console.log('finally');
+}
+         </code></pre>
+    </section>
+
+    <section class="step" data-x="0" data-y="0" data-scale="3">
+        <header>
+            <h2 class="centered">Thank you!</h2>
+        </header>
+        <p><b>Skype:</b> marina_miranovich</p>
+        <p><b>Twitter:</b> @obnoxious_mari</p>
+    </section>
+
+  <!--   <section class="step" data-x="0" data-y="0">
+        <header>
+            
+        </header>
+    </section> -->
+
+
+</div>
+
+<div class="line"></div>
+<script src="js/impress.js"></script>
+<script>impress().init();</script>
+
+<script src="http://yandex.st/highlightjs/8.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
