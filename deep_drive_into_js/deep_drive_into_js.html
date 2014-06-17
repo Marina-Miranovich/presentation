@@ -1,55 +1,386 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="viewport" content="width=1024, user-scalable=no">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=1024, user-scalable=no">
 
-  <title>Deep Drive Into JavaScript</title>
+	<title>Deep Drive Into JavaScript</title>
 
-  <!-- Required stylesheet -->
-  <link rel="stylesheet" media="screen" href="css/deck.core.css">
+	<!-- Required stylesheet -->
+	<link rel="stylesheet" media="screen" href="css/deck.core.css">
 
 
-  <!-- Style theme. More available in /themes/style/ or create your own. -->
-  <link rel="stylesheet" media="screen" href="css/neon.css">
+	<!-- Style theme. More available in /themes/style/ or create your own. -->
+	<link rel="stylesheet" media="screen" href="css/neon.css">
 
-  <!-- Transition theme. More available in /themes/transition/ or create your own. -->
-  <link rel="stylesheet" media="screen" href="css/horizontal-slide.css">
+	<!-- Transition theme. More available in /themes/transition/ or create your own. -->
+	<link rel="stylesheet" media="screen" href="css/horizontal-slide.css">
 
-  <!-- Required Modernizr file -->
-  <script src="js/modernizr.custom.js"></script>
+	<!-- Required Modernizr file -->
+	<script src="js/modernizr.custom.js"></script>
 </head>
 <body>
-  <div class="deck-container">
+	<div class="deck-container">
 
-    <!-- Begin slides. Just make elements with a class of slide. -->
-    <section class="slide">
-      <h1>Deep Drive Into JavaScript</h1>
-    </section>
+	<!-- Begin slides. Just make elements with a class of slide. -->
+	<section class="slide">
+		<h1>Deep Drive Into JavaScript</h1>
+	</section>
 
-    <section class="slide">
-      <h2>IF statement. False values</h2>
-      <ul>
-        <li class="slide">false</li>
-        <li class="slide">null</li>
-        <li class="slide">undefined</li>
-        <li class="slide">''</li>
-        <li class="slide">0</li>
-        <li class="slide">NaN</li>
-      </ul>
-    </section>
+	<section class="slide">
+		<h2>IF statement. False values</h2>
+		<ul>
+			<li class="slide">false</li>
+			<li class="slide">null</li>
+			<li class="slide">undefined</li>
+			<li class="slide">''</li>
+			<li class="slide">0</li>
+			<li class="slide">NaN</li>
+		</ul>
+	</section>
+	<section class="slide">
+		<h2>Operator's priority</h2>
+		<pre><code>
+true === 10 > 9 > 8;
+		</code></pre>
+	</section>
+	<section class="slide">
+		<h3>Operator's priority</h3>
+		<ol>
+			<li class="slide">.  []  ()</li>
+			<li class="slide">delete  typeof  new  +  -  !</li>
+			<li class="slide">*  /  %</li>
+			<li class="slide">+  -</li>
+			<li class="slide">&gt;=  &lt;=  &gt;  &lt;</li>
+			<li class="slide">===  !==  ==  !=</li>
+			<li class="slide">&amp;&amp;</li>
+			<li class="slide">||</li>
+			<li class="slide">?:</li>
+		</ol>
+	</section>
+	<section class="slide">
+		<h3>Operator's priority</h3>
+		<pre><code>
+var val = 'smtg';
+console.log('Value is ' + (val === 'smtg') ? 'Something' : 'Nothing');
+		</code></pre>
+	</section>
 
-    <section class="slide">
-      <h1>Content</h1>
-    </section>
+	<section class="slide">
+		<h2>One more time about &amp;&amp; and ||</h2>
+		<p>&amp;&amp; returns the first argument if it <strong>false</strong> and the second otherwise.</p>
+		<pre><code>
+var seconds = getDate() &amp;&amp; getDate().seconds;
+		</code></pre>
+	</section>
+	<section class="slide">
+		<h3>One more time about &amp;&amp; and ||</h3>
+		<p>|| returns the first argument if it <strong>true</strong> and the second otherwise</p>
+		<pre><code>
+var benefit = getBenefit() || 500;
+		</code></pre>
+	</section>
+	<section class="slide">
+		<h2>Hoising</h2>
+		<pre><code>
+function bar() {
+    return foo;
+    foo = 10;
+    function foo() {};
+    var foo = '11';
+}
+alert(typeof bar());
+		</code></pre>
+	</section>
+	<section class="slide">
+		<h3>Hoising</h3>
+		<pre><code>
+function bar() {
+    <strong>function foo() {};</strong>
+    return foo;
+    foo = 10;
+    var foo = '11';
+}
+alert(typeof bar());
+		</code></pre>
+	</section>
+	<section class="slide">
+		<h3>Hoising</h3>
+		<pre><code>
+function bar() {
+    <strong>var foo;</strong>
+    <strong>function foo() {};</strong>
+    return foo;
+    foo = 10;
+    foo = '11';
+}
+alert(typeof bar());
+		</code></pre>
+	</section>
+	<section class="slide">
+		<h2>Objects</h2>
+		<p>Object is a container for properties. Every property has a name and a value.</p>
+		<pre><code>
+var empty_object = {};
+var worker = {
+	first_name: 'John',
+	'last-name': 'Howard'
+};
+		</code></pre>
+	</section>
+	<section class="slide">
+		<h3>Objects</h3>
+		<pre><code>
+var company = {
+	name: 'Awesome Company',
+	employees: {
+		director: 'John',
+		developer: 'George'
+	}
+};
+var name = company.name;
+var frontEndDev = company.employees.developer;
+		</code></pre>
+	</section>
+	<section class="slide">
+		<h3>Objects</h3>
+		<pre><code>
+var company = {
+	name: 'Awesome Company',
+	employees: {
+		director: 'John',
+		developer: 'George'
+	}
+};
+var name = company['name'];
+var frontEndDev = company['employees']['developer'];
+var director = company['employees'].director;
+		</code></pre>
+	</section>
+	<section class="slide">
+		<h3>Objects</h3>
+		<pre><code>
+var company = {
+	name: 'Awesome Company',
+	employees: {
+		director: 'John',
+		developer: 'George'
+	}
+};
+for(var prop in company) {
+	if (company.hasOwnProperty(prop)) {
+		console.log(company[prop]);
+	}
+}
+		</code></pre>
+	</section>
+	<section class="slide">
+		<h2>Arrays</h2>
+		<pre><code>
+var empty = [];
+var numbers = ['one', 'two'];
+var misc = ['one', 1, NaN, ['nested, 'array], undefined, true];
+		</code></pre>
+	</section>
+	<section class="slide">
+		<h3>Arrays</h3>
+		<pre><code>
+var numbers = ['one', 'two'];
+var numbers_obj = {
+	'1': 'one',
+	'2': 'two'
+};
+		</code></pre>
+	</section>
+	<section class="slide">
+		<h3>Arrays</h3>
+		<pre><code>
+var empty = [];
+var numbers = ['one', 'two'];
+		</code></pre>
+		<pre class="slide"><code>
+empty.length;  // 0
+numbers.length;  // 2
+		</code></pre>
+		<pre class="slide"><code>
+empty[1];  // undefined
+numbers[1];  // 'two'
+		</code></pre>
+	</section>
+	<section class="slide">
+		<h3>Arrays</h3>
+		<pre><code>
+var empty = [];
+empty.length; //0
+		</code></pre>
+		<pre class="slide"><code>
+empty[1000] = 'wow!';
+numbers.length;  // 1001
+		</code></pre>
+	</section>
+	<section class="slide">
+		<h3>Arrays</h3>
+		<pre><code>
+var arr = [];
+arr[0]  = 'a';
+arr[1]  = 'b';
+arr.foo = 'c';
+console.log(arr.length);
+		</code></pre>
+	</section>
+	<section class="slide">
+		<h3>Arrays</h3>
+		<pre><code>
+var myArr = ['foo', 'bar', 'baz'];
+myArr.length = 0;
+console.log(myArr);
+		</code></pre>
+	</section>
+	<section class="slide">
+		<h3>Arrays</h3>
+		<pre><code>
+var myArr = ['foo', 'bar', 'baz'];
+delete myArr[1]; // ['foo', undefined, 'baz']
+		</code></pre>
+		<pre class="slide"><code>
+myArr.splice(1, 1); // ['foo', 'baz']
+		</code></pre>
+	</section>
+	<section class="slide">
+		<h3>Arrays</h3>
+		<pre><code>
+var matrix = [
+	[1, 2, 3],
+	[4, 5, 6],
+	[0, 0, 3]
+];
+		</code></pre>
+	</section>
+	<section class="slide">
+		<h2>Functions</h2>
+		<p>Function is an object that has a few hidden properties. it has a hidden link to the object prototype, function context (this) and and the callable code that realizes function's behavior.</p>
+	</section>
+	<section class="slide">
+		<h3>Method call pattern</h3>
+		<pre><code>
+var myObj = {
+	value: 0,
+	getValue: function () {
+		return this.value;
+	}
+};
+myObj.getValue() //0
+		</code></pre>
+	</section>
+	<section class="slide">
+		<h3>Function call pattern</h3>
+		<pre><code>
+var myObj = {
+	value: 0,
+	getValue: function () {
+		var summ = function (num1, num2) {
+			console.log('summ', this);  // window
+			return (num1 + num2);
+		}
+		summ(2, 3);
+		console.log('getValue', this); //myObj
+		return this.value;
+	}
+};
+myObj.getValue(); //0
+		</code></pre>
+	</section>
+	<section class="slide">
+		<h3>Constructor call pattern</h3>
+		<pre><code>
+var Quo = function (status) {
+	this.status = status;
+};
+var quo = new Quo();
 
-    <section class="slide">
-      <h1>Here</h1>
-    </section>
+		</code></pre>
+	</section>
+	<section class="slide">
+		<h3>Apply, Call and Bind  call pattern</h3>
+		<pre><code>
+var context = { foo: "bar" };
+var returnFoo = function () {
+  return this.foo;
+};
+returnFoo(); //undefined
+		</code></pre>
+	</section>
+	<section class="slide">
+		<h3>Apply, Call and Bind  call pattern</h3>
+		<pre class="slide"><code>
+returnFoo.call(context); // => bar
+		</code></pre>
+		<pre class="slide"><code>
+returnFoo.apply(context); // => bar
+		</code></pre>
+		<pre class="slide"><code>
+var bound = returnFoo.bind(context);
+bound(); // => "bar"
+		</code></pre>
+	</section>
+	<section class="slide">
+		<h2>Closure</h2>
+		<pre><code>
+var myObj = (function() {
+	var value = 0;
+	return {
+		getValue: function () {
+			return value;
+		},
+		incrementValue: function () {
+			value ++;
+		}
+	};
+	
+})();
+		</code></pre>
+	</section>
+	<section class="slide">
+		<h3>Closure</h3>
+		<pre><code>
+var show_numbers = function () {
+	for (var i = 0; i &lt; 10; i ++) {
+		setTimeout(function(){
+			console.log(i);
+		}, 10);
+	}
+}
+show_numbers(); // 10, 10, 10, ... 
+		</code></pre>
+	</section>
+	<section class="slide">
+		<h3>Closure</h3>
+		<pre><code>
+var helper = function (i) {
+	return function () {
+		console.log(i);
+	}	
+};
+var show_numbers = function () {
+	for (var i = 0; i &lt; 10; i ++) {
+		setTimeout(helper(i), 10);
+	}
+}
+show_numbers(); // 0, 1, 2, .... 
+		</code></pre>
+	</section>
+	<section class="slide">
+		<img src='images/end.jpg'/>
+	</section>
+	<section class="slide">
+		<h1>Thank you!</h1>
+	</section>
 
-    <!-- End slides. -->
-  </div>
+
+
+	<!-- End slides. -->
+	</div>
 
 <!-- Required JS files. -->
 <script src="js/jquery.min.js"></script>
@@ -58,9 +389,9 @@
 
 <!-- Initialize the deck. You can put this in an external file if desired. -->
 <script>
-  $(function() {
-    $.deck('.slide');
-  });
+	$(function() {
+	$.deck('.slide');
+	});
 </script>
 </body>
 </html>
