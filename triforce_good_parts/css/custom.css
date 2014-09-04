@@ -1,0 +1,62 @@
+h3 {
+	position: absolute;
+}
+.first h3,
+.end h3 {
+	bottom: 0;
+	right: 0;
+	padding-right: 25px;
+}
+.links h3 {
+	top: 50%;
+}
+.logos img {
+	position: absolute;
+}
+.colbert {
+	top: 25px;
+	left: 25px;
+}
+.futurama {
+	top: 50%;
+	left: 50%;
+	margin: -160px 0 0 -250px;
+}
+.tds {
+	bottom: 25px;
+	right: 25px;
+}
+.midnight {
+	bottom: 25px;
+	left: 25px;
+}
+.tosh {
+	top: 25px;
+	right: 25px;
+}
+.full_page_image {
+	background-size: cover;
+	background-position: center; 
+}
+.legend_of_zelda {
+	background-image: url('../images/legend_of_zelda.jpg');
+}
+.triforce_logo {
+	background-image: url('../images/triforce.jpg');
+}
+.priorities {
+	background-image: url('../images/video_page.jpg');
+	background-position: 50% 0;
+}
+.static_modules {
+	background-image: url('../images/static_modules.jpg');
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+.end img {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -190px 0 0 -304px;
+}
