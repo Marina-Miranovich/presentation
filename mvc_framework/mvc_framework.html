@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=1024, user-scalable=no">
+
+	<title>Triforce: Good Parts</title>
+
+	<!-- Required stylesheet -->
+	<link rel="stylesheet" media="screen" href="css/deck.core.css">
+
+
+	<!-- Style theme. More available in /themes/style/ or create your own. -->
+	<link rel="stylesheet" media="screen" href="css/neon.css">
+
+	<!-- Transition theme. More available in /themes/transition/ or create your own. -->
+	<link rel="stylesheet" media="screen" href="css/horizontal-slide.css">
+
+	<link rel="stylesheet" media="screen" href="css/custom.css">
+
+	<!-- Required Modernizr file -->
+	<script src="js/modernizr.custom.js"></script>
+</head>
+<body>
+	<div class="deck-container">
+
+	<!-- Begin slides. Just make elements with a class of slide. -->
+	<section class="slide first fit_image">
+	</section>
+
+	<section class="slide fiction fit_image">
+	</section>
+
+	<section class="slide site">
+		<iframe width="700" height="500px" src="http://thedailyshow.cc.com"></iframe>
+	</section>
+	<section class="slide questions fit_image">
+	</section>
+	<section class="slide steps fit_image">
+	</section>
+	<section class="slide structure born who">
+		<div class="period"></div>
+		<div class="question"></div>
+	</section>
+	<section class="slide born_who fit_image">
+	</section>
+	<section class="slide born_who_ex">
+		<pre><code>
+handleInitialLoad: function() {
+	var self = this;
+	this.activityIndicator.fadeIn(100);
+	if (typeof(triforceManifestFeed) == 'undefined' || triforceManifestFeed == '') {
+		var feedURL = window.Triforce.config.manifestFeed + '?url=' + encodeURIComponent(w.location.href);
+		$.getJSON(feedURL, function(response) {
+			triforceManifestFeed = response.manifest;
+			if (triforceManifestFeed === false) {
+				
+				w.Triforce.getPageLoader().hideActivityIndicator();
+				w.Triforce.getMediator().trigger('triforce:legacyload');
+			}
+			else {
+				w.Triforce.getMediator().trigger('triforce:pageready');
+			}
+	    });
+		return;
+	}
+	if (triforceManifestFeed) {
+		triforceManifestFeed = triforceManifestFeed.manifest;
+		w.Triforce.getMediator().trigger('triforce:pageready');
+	}
+	else {
+		w.Triforce.getMediator().trigger('triforce:errornomanifest');
+	}
+}
+		</code></pre>
+	</section>
+	<section class="slide structure born how">
+		<div class="period"></div>
+		<div class="question"></div>
+	</section>
+	<section class="slide born_how fit_image">
+	</section>
+	<section class="slide structure born what">
+		<div class="period"></div>
+		<div class="question"></div>
+	</section>
+	<section class="slide born_what fit_image">
+	</section>
+	<section class="slide born_what_ex">
+		<pre><code>
+fetchArcStages: function() {
+	var self = this,
+		currentArcStage = this.getCurrentArcStage();
+	this.elm.find('div.arcStageOverride').append('Arc Stage: &lt;select name="modes.arcStage"&gt;&lt;/select&gt;');
+	var arcStagesAvailable = [
+		{ id:'default',name:'Site Default'},
+		{ id:'live',name:'Live'},
+		{ id:'staging',name:'Staging'},
+		{ id:'authoring',name:'Authoring'}
+	];
+	for (var stage in arcStagesAvailable)
+	{
+		var selected = '';
+		if (arcStagesAvailable[stage].id == currentArcStage)
+		{
+			selected = ' selected="selected"';
+		}
+		
+		self.elm.find('div.arcStageOverride select').append('&lt;option value="' + arcStagesAvailable[stage].id + '"' + selected + '&gt;' + arcStagesAvailable[stage].name + '&lt;/option&gt;');
+	}
+}
+		</code></pre>
+	</section>
+	<section class="slide structure evolution who">
+		<div class="period"></div>
+		<div class="question"></div>
+	</section>
+	<section class="slide evolution_who fit_image">
+	</section>
+	<section class="slide structure evolution how">
+		<div class="period"></div>
+		<div class="question"></div>
+	</section>
+	<section class="slide evolution_how fit_image">
+	</section>
+	<section class="slide structure evolution what">
+		<div class="period"></div>
+		<div class="question"></div>
+	</section>
+	<section class="slide evolution_what_1 fit_image">
+	</section>
+	<section class="slide evolution_what_2 fit_image">
+	</section>
+	<section class="slide evolution_what_ex">
+		<pre><code>
+/**
+ * Updates module element
+ */
+updateModuleElement: function() {
+	$(this.moduleElement)
+		.removeClass("triforce-module tf-large tf-small tf-noheight")
+		.removeAttr("data-tfloading");
+}
+		</code></pre>
+	</section>
+	<section class="slide structure support who">
+		<div class="period"></div>
+		<div class="question"></div>
+	</section>
+	<section class="slide support_who fit_image">
+		<div class="marker period"></div>
+		<div class="marker question"></div>
+	</section>
+	<section class="slide structure support how">
+		<div class="period"></div>
+		<div class="question"></div>
+	</section>
+	<section class="slide support_how fit_image">
+	</section>
+	<section class="slide structure support what">
+		<div class="period"></div>
+		<div class="question"></div>
+	</section>
+	<section class="slide support_what fit_image">
+	</section>
+	
+
+
+	<!-- End slides. -->
+	</div>
+
+<!-- Required JS files. -->
+<script src="js/jquery.min.js"></script>
+<script src="js/deck.core.js"></script>
+
+
+<!-- Initialize the deck. You can put this in an external file if desired. -->
+<script>
+	$(function() {
+		$.deck('.slide');
+	});
+</script>
+</body>
+</html>

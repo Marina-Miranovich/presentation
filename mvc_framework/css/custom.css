@@ -1,0 +1,107 @@
+.full_page_image {
+	background-size: cover;
+	background-position: center; 
+}
+.fit_image {
+	background-size: contain; 
+	background-repeat: no-repeat;
+	background-position: center;
+}
+.structure .period {
+	display: inline-block;
+	width: 300px;
+	height: 378px;
+}
+.structure .question {
+	display: inline-block;
+	width: 488px;
+	height: 378px;
+}
+.marker {
+	display: none;
+	position: absolute;
+	left: 20px;
+}
+.marker.period {
+	top: 20px;
+	width: 100px;
+	height: 50px;
+	background-image: url('../images/steps_h.jpg');
+	background-size: 100px 50px;
+}
+
+
+/* -------------- STRUCTURE ------------- */
+.born .period {
+	background: url('../images/steps_h.jpg') -151px -291px;
+}
+.who .question {
+	background: url('../images/questions.jpg') -358px -26px;
+}
+.evolution .period {
+	background: url('../images/steps_h.jpg') -615px -263px;
+}
+.how .question {
+	background: url('../images/questions.jpg') -310px -368px;
+}
+.support .period {
+	background: url('../images/steps_h.jpg') -1334px -117px;
+}
+.what .question {
+	background: url('../images/questions.jpg') -329px -711px;
+}
+
+
+
+/* ------------------- SLIDES ----------------- */
+.first {
+	background-image: url('../images/the_first.jpg');
+}
+.fiction {
+	background-image: url('../images/fiction_cut_white.jpg');
+}
+.site {
+	background-image: url('../images/site_h.jpg');
+	background-repeat: no-repeat;
+	background-size: 847px 690px;
+	background-position: 50% 0;
+}
+.site iframe {
+	margin-top: 72px;
+}
+.questions {
+	background-image: url('../images/questions.jpg');
+}
+.steps {
+	background-image: url('../images/steps_h.jpg');
+}
+.born_who {
+	background-image: url('../images/born_who_h.jpg');
+}
+.born_how {
+	background-image: url('../images/born_how_h.jpg');
+}
+.born_what {
+	background-image: url('../images/born_what_h.jpg');
+}
+.evolution_who {
+	background-image: url('../images/evolution_who_h.jpg');
+}
+.evolution_how {
+	background-image: url('../images/evolution_how_h.jpg');
+}
+.evolution_what_1 {
+	background-image: url('../images/evolution_what_1_h.jpg');
+}
+.evolution_what_2 {
+	background-image: url('../images/evolution_what_2_h.jpg');
+}
+.support_who {
+	background-image: url('../images/support_who_h.jpg');
+}
+.support_how {
+	background-image: url('../images/support_how.jpg');
+}
+.support_what {
+	background-image: url('../images/support_what_h.jpg');
+}
