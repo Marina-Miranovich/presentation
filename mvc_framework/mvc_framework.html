@@ -18,6 +18,7 @@
 	<link rel="stylesheet" media="screen" href="css/horizontal-slide.css">
 
 	<link rel="stylesheet" media="screen" href="css/custom.css">
+	<link href="css/prism.css" rel="stylesheet" />
 
 	<!-- Required Modernizr file -->
 	<script src="js/modernizr.custom.js"></script>
@@ -32,6 +33,9 @@
 	<section class="slide fiction fit_image">
 	</section>
 
+	<section class="slide triforce fit_image">
+	</section>
+
 	<section class="slide site">
 		<iframe width="700" height="500px" src="http://thedailyshow.cc.com"></iframe>
 	</section>
@@ -40,13 +44,15 @@
 	<section class="slide steps fit_image">
 	</section>
 	<section class="slide structure born who">
-		<div class="period"></div>
-		<div class="question"></div>
+		<div class="structure_wrapper">
+			<div class="period"></div>
+			<div class="question"></div>
+		</div>
 	</section>
 	<section class="slide born_who fit_image">
 	</section>
 	<section class="slide born_who_ex">
-		<pre><code>
+		<pre><code class="language-javascript">
 handleInitialLoad: function() {
 	var self = this;
 	this.activityIndicator.fadeIn(100);
@@ -55,7 +61,6 @@ handleInitialLoad: function() {
 		$.getJSON(feedURL, function(response) {
 			triforceManifestFeed = response.manifest;
 			if (triforceManifestFeed === false) {
-				
 				w.Triforce.getPageLoader().hideActivityIndicator();
 				w.Triforce.getMediator().trigger('triforce:legacyload');
 			}
@@ -76,19 +81,23 @@ handleInitialLoad: function() {
 		</code></pre>
 	</section>
 	<section class="slide structure born how">
-		<div class="period"></div>
-		<div class="question"></div>
+		<div class="structure_wrapper">
+			<div class="period"></div>
+			<div class="question"></div>
+		</div>
 	</section>
 	<section class="slide born_how fit_image">
 	</section>
 	<section class="slide structure born what">
-		<div class="period"></div>
-		<div class="question"></div>
+		<div class="structure_wrapper">
+			<div class="period"></div>
+			<div class="question"></div>
+		</div>
 	</section>
 	<section class="slide born_what fit_image">
 	</section>
 	<section class="slide born_what_ex">
-		<pre><code>
+		<pre><code class="language-javascript">
 fetchArcStages: function() {
 	var self = this,
 		currentArcStage = this.getCurrentArcStage();
@@ -113,27 +122,33 @@ fetchArcStages: function() {
 		</code></pre>
 	</section>
 	<section class="slide structure evolution who">
-		<div class="period"></div>
-		<div class="question"></div>
+		<div class="structure_wrapper">
+			<div class="period"></div>
+			<div class="question"></div>
+		</div>
 	</section>
 	<section class="slide evolution_who fit_image">
 	</section>
 	<section class="slide structure evolution how">
-		<div class="period"></div>
-		<div class="question"></div>
+		<div class="structure_wrapper">
+			<div class="period"></div>
+			<div class="question"></div>
+		</div>
 	</section>
 	<section class="slide evolution_how fit_image">
 	</section>
 	<section class="slide structure evolution what">
-		<div class="period"></div>
-		<div class="question"></div>
+		<div class="structure_wrapper">
+			<div class="period"></div>
+			<div class="question"></div>
+		</div>
 	</section>
 	<section class="slide evolution_what_1 fit_image">
 	</section>
 	<section class="slide evolution_what_2 fit_image">
 	</section>
 	<section class="slide evolution_what_ex">
-		<pre><code>
+		<pre><code class="language-javascript">
 /**
  * Updates module element
  */
@@ -145,24 +160,34 @@ updateModuleElement: function() {
 		</code></pre>
 	</section>
 	<section class="slide structure support who">
-		<div class="period"></div>
-		<div class="question"></div>
+		<div class="structure_wrapper">
+			<div class="period"></div>
+			<div class="question"></div>
+		</div>
 	</section>
 	<section class="slide support_who fit_image">
-		<div class="marker period"></div>
-		<div class="marker question"></div>
+		<div class="structure_wrapper">
+			<div class="period"></div>
+			<div class="question"></div>
+		</div>
 	</section>
 	<section class="slide structure support how">
-		<div class="period"></div>
-		<div class="question"></div>
+		<div class="structure_wrapper">
+			<div class="period"></div>
+			<div class="question"></div>
+		</div>
 	</section>
 	<section class="slide support_how fit_image">
 	</section>
 	<section class="slide structure support what">
-		<div class="period"></div>
-		<div class="question"></div>
+		<div class="structure_wrapper">
+			<div class="period"></div>
+			<div class="question"></div>
+		</div>
 	</section>
 	<section class="slide support_what fit_image">
+	</section>
+	<section class="slide monster fit_image">
 	</section>
 	
 
@@ -173,6 +198,7 @@ updateModuleElement: function() {
 <!-- Required JS files. -->
 <script src="js/jquery.min.js"></script>
 <script src="js/deck.core.js"></script>
+<script src="js/prism.js"></script>
 
 
 <!-- Initialize the deck. You can put this in an external file if desired. -->
@@ -181,5 +207,6 @@ updateModuleElement: function() {
 		$.deck('.slide');
 	});
 </script>
+
 </body>
 </html>

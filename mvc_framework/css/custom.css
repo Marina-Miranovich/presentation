@@ -7,6 +7,12 @@
 	background-repeat: no-repeat;
 	background-position: center;
 }
+.structure_wrapper {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin: -190px 0 0 -395px;
+}
 .structure .period {
 	display: inline-block;
 	width: 300px;
@@ -16,6 +22,13 @@
 	display: inline-block;
 	width: 488px;
 	height: 378px;
+}
+.slide pre {
+	margin: 0;
+	padding: 0;
+	border: none;
+	background: white;
+	font-size: 18px;
 }
 .marker {
 	display: none;
@@ -58,7 +71,10 @@
 	background-image: url('../images/the_first.jpg');
 }
 .fiction {
-	background-image: url('../images/fiction_cut_white.jpg');
+	background-image: url('../images/fiction_pic.jpg');
+}
+.triforce {
+	background-image: url('../images/triforce.jpg');
 }
 .site {
 	background-image: url('../images/site_h.jpg');
@@ -104,4 +120,7 @@
 }
 .support_what {
 	background-image: url('../images/support_what_h.jpg');
+}
+.monster {
+	background-image: url('../images/monster.jpg');
 }
