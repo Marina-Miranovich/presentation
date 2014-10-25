@@ -124,7 +124,8 @@
 .steps {
 	background-image: url('../images/steps_h.jpg');
 }
-.born_who {
+.born_who,
+.born_who_small {
 	background-image: url('../images/born_who_h.jpg');
 }
 .born_who_ex > pre {
@@ -177,10 +178,12 @@
 	top: 539px;
 	left: 87px;
 }
-.born_how {
+.born_how,
+.born_how_small {
 	background-image: url('../images/born_how_h.jpg');
 }
-.born_what {
+.born_what,
+.born_what_small {
 	background-image: url('../images/born_what_h.jpg');
 }
 .born_what_ex > pre {
@@ -256,16 +259,19 @@
 	top: 348px;
 	left: 87px;
 }
-.evolution_who {
+.evolution_who,
+.evolution_who_small {
 	background-image: url('../images/evolution_who_h.jpg');
 }
-.evolution_how {
+.evolution_how,
+.evolution_how_small {
 	background-image: url('../images/evolution_how_h.jpg');
 }
 .evolution_what_1 {
 	background-image: url('../images/evolution_what_1_h.jpg');
 }
-.evolution_what_2 {
+.evolution_what_2,
+.evolution_what_small {
 	background-image: url('../images/evolution_what_2_h.jpg');
 }
 .csstransitions.csstransforms .deck-container:not(.deck-menu) > .evolution_what_ex .deck-current.first.highlight {
@@ -278,14 +284,28 @@
 	top: 23px;
 	left: 47px;
 }
-.support_who {
+.support_who,
+.support_who_small {
 	background-image: url('../images/support_who_h.jpg');
 }
-.support_how {
+.support_how,
+.support_how_small {
 	background-image: url('../images/support_how.jpg');
 }
-.support_what {
+.support_what,
+.support_what_small {
 	background-image: url('../images/support_what_h.jpg');
+}
+.conclusion > .deck-current,
+.conclusion > .deck-previous,
+.conclusion > .deck-before {
+	display: inline-block;
+	width: 32%;
+	height: 224px;
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	opacity: 1;
 }
 .monster {
 	background-image: url('../images/monster.jpg');
