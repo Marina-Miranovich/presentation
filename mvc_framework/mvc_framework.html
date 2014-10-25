@@ -27,7 +27,7 @@
 	<div class="deck-container">
 
 	<!-- Begin slides. Just make elements with a class of slide. -->
-	<section class="slide first fit_image">
+	<section class="slide the_first fit_image">
 	</section>
 
 	<section class="slide fiction fit_image">
@@ -79,6 +79,27 @@ handleInitialLoad: function() {
 	}
 }
 		</code></pre>
+		<div class="slide highlight hide_after first"></div>
+		<div class="slide appear hide_after first"><pre><code class="language-javascript">$.getJSON(feedURL, function(response) {
+	triforceManifestFeed = response.manifest;
+	if (triforceManifestFeed === false) {
+		w.Triforce.getPageLoader().hideActivityIndicator();
+		w.Triforce.getMediator().trigger('triforce:legacyload');
+	}
+	else {
+		w.Triforce.getMediator().trigger('triforce:pageready');
+	}
+});</code></pre></div>
+		<div class="slide highlight hide_after second"></div>
+		<div class="slide appear hide_after second"><pre><code class="language-javascript">var self = this;</code></pre></div>
+		<div class="slide highlight hide_after third"></div>
+		<div class="slide appear not_hide third"><pre><code class="language-javascript">if (typeof(triforceManifestFeed) == 'undefined'
+	|| triforceManifestFeed == '') {</code></pre></div>
+		<div class="slide highlight hide_after fourth"></div>
+		<div class="slide appear not_hide fourth"><pre><code class="language-javascript">if (triforceManifestFeed) {</code></pre></div>
+		<div class="slide highlight hide_after fifth"></div>
+		<div class="slide appear not_hide fifth"><pre><code class="language-javascript">}
+else {</code></pre></div>
 	</section>
 	<section class="slide structure born how">
 		<div class="structure_wrapper">
@@ -120,6 +141,25 @@ fetchArcStages: function() {
 	}
 }
 		</code></pre>
+		<div class="slide highlight hide_after first"></div>
+		<div class="slide appear hide_after first"><pre><code class="language-javascript">fetchArcStages: function() {</code></pre></div>
+		<div class="slide highlight hide_after second"></div>
+		<div class="slide appear hide_after second"><pre><code class="language-javascript">for (var stage in arcStagesAvailable)
+	{
+		var selected = '';
+		if (arcStagesAvailable[stage].id == currentArcStage)
+		{</code></pre></div>
+		<div class="slide highlight hide_after third"></div>
+		<div class="slide appear hide_after third"><pre><code class="language-javascript">self.elm.find('div.arcStageOverride select').append('&lt;option value="' + arcStagesAvailable[stage].id + '"' + selected + '&gt;' + arcStagesAvailable[stage].name + '&lt;/option&gt;');</code></pre></div>
+		<div class="slide appear hide_after fourth"><pre><code class="language-javascript">self.elm.find('div.arcStageOverride select').append('&lt;option value="' + arcStagesAvailable[stage].id + '"' + selected + '&gt;' + arcStagesAvailable[stage].name + '&lt;/option&gt;');</code></pre></div>
+		<div class="slide highlight hide_after fifth"></div>
+		<div class="slide appear not_hide fifth"><pre><code class="language-javascript">var self = this,</code></pre></div>
+		<div class="slide highlight hide_after sixth"></div>
+		<div class="slide appear not_hide sixth"><pre><code class="language-javascript">var arcStagesAvailable = [</code></pre></div>
+		<div class="slide highlight hide_after seventh"></div>
+		<div class="slide appear not_hide seventh"><pre><code class="language-javascript">for (var stage in arcStagesAvailable)</code></pre></div>
+		<div class="slide highlight hide_after eighth"></div>
+		<div class="slide appear not_hide eighth"><pre><code class="language-javascript">var selected = '';</code></pre></div>
 	</section>
 	<section class="slide structure evolution who">
 		<div class="structure_wrapper">
@@ -158,6 +198,11 @@ updateModuleElement: function() {
 		.removeAttr("data-tfloading");
 }
 		</code></pre>
+		<div class="slide highlight hide_after first"></div>
+		<div class="slide appear not_hide first"><pre><code class="language-javascript">/**
+ * Updates module element
+ */
+updateModuleElement: function() {</code></pre></div>
 	</section>
 	<section class="slide structure support who">
 		<div class="structure_wrapper">
@@ -187,6 +232,19 @@ updateModuleElement: function() {
 	</section>
 	<section class="slide support_what fit_image">
 	</section>
+	<!-- <section class="slide conclusion">
+		<div class="wrapper">
+			<div class="born_who_small"></div>
+			<div class="born_how_small"></div>
+			<div class="born_what_small"></div>
+			<div class="evolution_who_small"></div>
+			<div class="evolution_how_small"></div>
+			<div class="evolution_what_small"></div>
+			<div class="support_who_small"></div>
+			<div class="support_how_small"></div>
+			<div class="support_what_small"></div>
+		</div>
+	</section> -->
 	<section class="slide monster fit_image">
 	</section>
 	
