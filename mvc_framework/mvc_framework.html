@@ -245,7 +245,12 @@ updateModuleElement: function() {</code></pre></div>
 		<div class="support_how_small slide"></div>
 		<div class="support_what_small slide"></div>
 	</section>
-	<section class="slide monster fit_image">
+	<!-- <section class="slide monster fit_image">
+	</section> -->
+	<section class="slide monster_video fit_image">
+		<video id="monsterVideo" width="960" height="540">
+			<source src="video/Final Slide_Monster.ogv" type="video/mp4">
+		</video>
 	</section>
 	
 
@@ -263,6 +268,14 @@ updateModuleElement: function() {</code></pre></div>
 <script>
 	$(function() {
 		$.deck('.slide');
+		var player = document.getElementById('monsterVideo');
+		var interval = setInterval(function () {
+			var current = $('.deck-current');
+			if (current.hasClass('monster_video')) {
+				player.play();
+				clearInterval(interval);
+			}
+		}, 500);
 	});
 </script>
 
