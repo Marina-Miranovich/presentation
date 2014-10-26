@@ -296,6 +296,9 @@
 .support_what_small {
 	background-image: url('../images/support_what_h.jpg');
 }
+.support_what_ex {
+	background-image: url('../images/rename.jpg');
+}
 .conclusion > .deck-current,
 .conclusion > .deck-previous,
 .conclusion > .deck-before {
